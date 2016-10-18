@@ -25,4 +25,4 @@ Custom icon font
     npm run build
     ````
     
-5. Check out the results in `dist/`
+5. Check out the results in `dist`
