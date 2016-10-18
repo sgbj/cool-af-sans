@@ -1,6 +1,8 @@
 # cool-af-sans
 Custom icon font
 
+![Screenshot](https://github.com/sgbj/cool-af-sans/raw/master/screenshots/screenshot1.png)
+
 ## Getting started
 
 1. Clone the repo
