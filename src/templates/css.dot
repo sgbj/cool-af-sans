@@ -1,0 +1,23 @@
+@font-face {
+    font-family: '{{=it.options.fontName}}';
+    src: url('../fonts/{{=it.options.fontName}}.eot?#iefix') format('eot'),
+         url('../fonts/{{=it.options.fontName}}.woff') format('woff'),
+         url('../fonts/{{=it.options.fontName}}.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.{{=it.prefix}} {
+    display: inline-block;
+    font: normal normal normal 14px/1 '{{=it.options.fontName}}';
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+{{ for (var glyph of it.glyphs) { }}
+    .{{=it.prefix}}.{{=it.prefix}}-{{=glyph.name}}:before {
+        content: '\{{=glyph.unicode[0].codePointAt(0).toString(16)}}';
+    }
+{{ } }}

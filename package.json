@@ -1,0 +1,23 @@
+{
+  "name": "cool-af-sans",
+  "version": "1.0.0",
+  "description": "Custom icon font",
+  "scripts": {
+    "build": "gulp"
+  },
+  "repository": "https://github.com/sgbj/cool-af-sans",
+  "keywords": [
+    "icon",
+    "font",
+    "svg",
+    "cool"
+  ],
+  "author": "sgbj",
+  "license": "MIT",
+  "devDependencies": {
+    "dot": "^1.0.3",
+    "gulp": "^3.9.1",
+    "gulp-iconfont": "^8.0.1",
+    "mkdirp": "^0.5.1"
+  }
+}
