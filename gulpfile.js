@@ -1,6 +1,7 @@
 const gulp = require('gulp'),
+      watch = require('gulp-watch');
       iconfont = require('gulp-iconfont'),
-      dots = require('dot').process({ path: './src/templates' });
+      dot = require('dot')
       mkdirp = require('mkdirp'),
       fs = require('fs'),
       prefix = 'af';
@@ -20,10 +21,17 @@ gulp.task('default', () => {
                 if (error) {
                     console.error(error);
                 } else {
+                    const dots = dot.process({ path: './src/templates' });
                     fs.writeFileSync(`dist/css/${options.fontName}.css`, dots.css({ prefix, glyphs, options }));
-                    fs.writeFileSync(`dist/${options.fontName}.html`, dots.html({ prefix, glyphs, options }));
+                    fs.writeFileSync(`${options.fontName}.html`, dots.html({ prefix, glyphs, options }));
                 }
             });
         })
         .pipe(gulp.dest('dist/fonts'));
+});
+
+gulp.task('watch', () => {
+    return watch(['src/**/*'], () => {
+        gulp.start('default');
+    });
 });
