@@ -23,7 +23,7 @@ gulp.task('default', () => {
                 } else {
                     const dots = dot.process({ path: './src/templates' });
                     fs.writeFileSync(`dist/css/${options.fontName}.css`, dots.css({ prefix, glyphs, options }));
-                    fs.writeFileSync(`${options.fontName}.html`, dots.html({ prefix, glyphs, options }));
+                    fs.writeFileSync(`index.html`, dots.html({ prefix, glyphs, options }));
                 }
             });
         })
