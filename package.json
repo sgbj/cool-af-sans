@@ -4,7 +4,8 @@
   "description": "Custom icon font",
   "scripts": {
     "build": "gulp",
-    "watch": "gulp watch"
+    "watch": "gulp watch",
+    "gh-pages": "git checkout gh-pages && git rebase master && git push origin gh-pages && git checkout master"
   },
   "repository": "https://github.com/sgbj/cool-af-sans",
   "keywords": [
