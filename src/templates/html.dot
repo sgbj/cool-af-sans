@@ -1,40 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{{=it.options.fontName}}</title>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="dist/css/{{=it.options.fontName}}.css" rel="stylesheet">
         <style>
-            .masthead.segment {
-                min-height: 650px;
-                padding: 1em 0em;
+            body {
+                font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+                margin: 0;
             }
-            .masthead h1.ui.header {
-                margin-top: 2.5em;
-                margin-bottom: 0em;
+            .container {
+                max-width: 1127px;
+                margin: 0 auto;
+                padding: 0 1em;
+            }
+            .masthead {
+                background-color: rgb(27, 28, 29);
+            }
+            .masthead nav {
+                padding: 2em 0;
+            }
+            .masthead nav a:not(:last-child) {
+                margin-right: 1.5em;
+            }
+            .masthead nav a, .masthead nav a:visited {
+                color: rgba(255, 255, 255, 0.7);
+                text-decoration: none;
+            }
+            .masthead nav a:hover, .masthead nav a:active {
+                color: rgba(255, 255, 255, 0.9);
+            }
+            .masthead header {
+                padding: 6em 0 8em 0;
+            }
+            .masthead h1, .masthead h2 {
+                color: rgba(255, 255, 255, 0.9);
+                text-align: center;
+            }
+            .masthead h1 {
                 font-size: 5em;
                 font-weight: normal;
             }
             .masthead h2 i {
                 font-size: 6em;
             }
+            footer {
+                margin-top: 7em;
+                padding: 4em 0;
+                text-align: center;
+                background-color: rgb(27, 28, 29);
+                color: rgba(255, 255, 255, 0.9);
+            }
+            .gh-buttons {
+                text-align: center;
+                padding: 2em 0;
+            }
             .gh-buttons iframe:not(:last-child) {
                 margin-right: 1em;
             }
-            h2.ui.header {
-                font-size: 2em;
-                margin-top: 3em !important;
-                margin-bottom: 1.5em;
+            main h2 {
+                font-weight: bold;
+                padding-bottom: .2em;
+                border-bottom: 1px solid rgba(34,36,38,.15);
+                margin-top: 3em;
             }
-            h2.ui.header .sub.header {
-                font-size: 0.6em;
+            main h2 small {
+                font-weight: normal;
+                display: block;
+                color: rgba(0, 0, 0, 0.6);
+                font-size: 0.7em;
             }
-            h3 {
+            main h3 {
+                margin-top: 2.5em;
                 font-weight: normal;
             }
-            .column i {
-                font-size: 3em;
+
+            ul.icons {
+                list-style-type: none;
+                padding: 0;
+            }
+            ul.icons li {
+                width: 25%;
+                display: inline-block;
+                padding: 1em 0;
+                text-align: center;
+            }
+            ul.icons li i {
+                font-size: 2.5em;
+                display: block;
             }
             code {
                 font-family: monaco, Consolas, "Lucida Console", monospace;
@@ -44,93 +97,83 @@
                 padding: 1em;
                 font-size: 1.4em;
                 border-radius: 0.2em;
+                overflow: auto;
             }
-            .footer {
-                margin-top: 7em !important;
-                padding: 4em 0 !important;
-            }
-
+            
             @media only screen and (max-width: 700px) {
-                .masthead.segment {
-                    min-height: 350px;
+                .masthead header {
+                    padding: 3em 0 4em 0;
                 }
-                .masthead h1.ui.header {
+                .masthead h1 {
                     font-size: 3em;
-                    margin-top: 2.2em;
                 }
                 .masthead h2 {
-                    margin-top: 0.5em;
-                    font-size: 1.5em;
+                    font-size: 2em;
                 }
                 .masthead h2 i {
                     font-size: 4em;
                 }
-                .gh-buttons iframe:not(:last-child) {
-                    margin-right: .5em;
+                ul.icons li {
+                    width: 50%;
+                    display: inline-block;
                 }
             }
         </style>
     </head>
     <body>
-        <div class="ui inverted vertical segment">
-            <div class="ui container">
-                <div class="ui inverted secondary pointing menu">
+        <div class="masthead">
+            <div class="container">
+                <nav>
                     <a class="item" href="#get-started">Get started</a>
                     <a class="item" href="#icons">Icons</a>
+                </nav>
+            
+                <header>
+                    <h1>{{=it.options.fontName}}</h1>
+                    <h2><i class="{{=it.prefix}} {{=it.prefix}}-github"></i></h2>
+                </header>
+
+                <div class="gh-buttons">
+                    <a class="github-button" href="https://github.com/sgbj" data-style="default" data-count-href="/sgbj/followers" data-count-api="/users/sgbj#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @sgbj on GitHub">Follow @sgbj</a>
+                    <a class="github-button" href="https://github.com/sgbj/cool-af-sans" data-icon="octicon-star" data-style="default" data-count-href="/sgbj/cool-af-sans/stargazers" data-count-api="/repos/sgbj/cool-af-sans#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star sgbj/cool-af-sans on GitHub">Star</a>
+                    <a class="github-button" href="https://github.com/sgbj/cool-af-sans/fork" data-icon="octicon-repo-forked" data-style="default" data-count-href="/sgbj/cool-af-sans/network" data-count-api="/repos/sgbj/cool-af-sans#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork sgbj/cool-af-sans on GitHub">Fork</a>
                 </div>
             </div>
         </div>
 
-        <div class="masthead ui vertical center aligned inverted segment">
-            <h1 class="ui header">{{=it.options.fontName}}</h1>
-            <h2><i class="{{=it.prefix}} {{=it.prefix}}-github"></i></h2>
-        </div>
+        <main class="container">
+            <h2 id="get-started">Get started <small>Add {{=it.options.fontName}} to your web app</small></h2>
 
-        <div class="ui inverted vertical center aligned segment gh-buttons">
-            <a class="github-button" href="https://github.com/sgbj" data-style="default" data-count-href="/sgbj/followers" data-count-api="/users/sgbj#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @sgbj on GitHub">Follow @sgbj</a>
-            <a class="github-button" href="https://github.com/sgbj/cool-af-sans" data-icon="octicon-star" data-style="default" data-count-href="/sgbj/cool-af-sans/stargazers" data-count-api="/repos/sgbj/cool-af-sans#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star sgbj/cool-af-sans on GitHub">Star</a>
-            <a class="github-button" href="https://github.com/sgbj/cool-af-sans/fork" data-icon="octicon-repo-forked" data-style="default" data-count-href="/sgbj/cool-af-sans/network" data-count-api="/repos/sgbj/cool-af-sans#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork sgbj/cool-af-sans on GitHub">Fork</a>
-        </div>
-
-        <div class="ui container">
-
-            <h2 id="get-started" class="ui dividing header">
-                Get started
-                <div class="sub header">Add {{=it.options.fontName}} to your web app</div>
-            </h2>
             <h3>Install from npm</h3>
             <code><pre>
             npm install {{=it.options.fontName}}
             </pre></code>
+
             <h3>Add to your <code>&lt;head&gt;</code></h3>
             <code><pre>
             &lt;link href="/{{=it.options.fontName}}/dist/css/{{=it.options.fontName}}.css" rel="stylesheet"&gt;
             </pre></code>
+
             <h3>Use in your html</h3>
             <code><pre>
             &lt;i class="{{=it.prefix}} {{=it.prefix}}-github"&gt;&lt;/i&gt;
             </pre></code>
 
-            <h2 id="icons" class="ui dividing header">
-                Icons
-                <div class="sub header">Choose between {{=it.glyphs.length}} icons</div>
-            </h2>
-            <div class="ui grid">
+            <h2 id="icons">Icons <small>Choose between {{=it.glyphs.length}} icons</small></h2>
+            
+            <ul class="icons">
                 {{ for (var glyph of it.glyphs) { }}
-                    <div class="eight wide tablet four wide computer column center aligned">
-                        <i class="{{=it.prefix}} {{=it.prefix}}-{{=glyph.name}}"></i><br/><code>.{{=it.prefix}}-{{=glyph.name}}</code>
-                    </div>
+                    <li>
+                        <i class="{{=it.prefix}} {{=it.prefix}}-{{=glyph.name}}"></i>
+                        <code>.{{=it.prefix}}-{{=glyph.name}}</code>
                 {{ } }}
-            </div>
+            </ul>
+        </main>
 
-        </div>
-
-        <div class="ui inverted vertical center aligned segment footer">
+        <footer>
             <p>Made with &lt;3 by sgbj</p>
-        </div>
+        </footer>
 
-        <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.js"></script>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
     </body>
 </html>
