@@ -1,9 +1,13 @@
 # cool-af-sans
-Custom icon font
+Custom icon font starter kit.
 
-![Screenshot](https://github.com/sgbj/cool-af-sans/raw/master/screenshots/screenshot1.png)
+![cool-af-sans](https://cloud.githubusercontent.com/assets/5178445/20035591/509f6510-a3b9-11e6-93c6-44132dfb382d.png)
 
-## Getting started
+## examples
+
+![cool-af-icons](https://cloud.githubusercontent.com/assets/5178445/20035601/9a04fb16-a3b9-11e6-87e9-00d22a2db4c3.png)
+
+## usage
 
 1. Clone the repo
 
